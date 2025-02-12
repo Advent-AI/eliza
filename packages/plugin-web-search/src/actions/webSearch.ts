@@ -4,7 +4,7 @@ import {
     type IAgentRuntime,
     type Memory,
     type State,
-    elizaLogger
+    elizaLogger,
 } from "@elizaos/core";
 import { encodingForModel, type TiktokenModel } from "js-tiktoken";
 import { WebSearchService } from "../services/webSearchService";
@@ -70,9 +70,9 @@ export const webSearch: Action = {
 
         const webSearchService = new WebSearchService();
         await webSearchService.initialize(runtime);
-        const searchResponse = await webSearchService.search(
-            webSearchPrompt,
-        );
+        const searchResponse = await webSearchService.search(webSearchPrompt);
+
+        elizaLogger.log("search response:", searchResponse);
 
         if (searchResponse && searchResponse.results.length) {
             const responseList = searchResponse.answer
@@ -82,12 +82,16 @@ export const webSearch: Action = {
                           ? `\n\nFor more details, you can check out these resources:\n${searchResponse.results
                                 .map(
                                     (result: SearchResult, index: number) =>
-                                        `${index + 1}. [${result.title}](${result.url})`
+                                        `${index + 1}. [${result.title}](${
+                                            result.url
+                                        })`
                                 )
                                 .join("\n")}`
                           : ""
                   }`
                 : "";
+
+            elizaLogger.log("response list:", responseList);
 
             callback({
                 text: MaxTokens(responseList, DEFAULT_MAX_WEB_SEARCH_TOKENS),

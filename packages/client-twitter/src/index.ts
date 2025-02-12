@@ -50,8 +50,9 @@ class TwitterManager {
 
 export const TwitterClientInterface: Client = {
     async start(runtime: IAgentRuntime) {
-        const twitterConfig: TwitterConfig =
-            await validateTwitterConfig(runtime);
+        const twitterConfig: TwitterConfig = await validateTwitterConfig(
+            runtime
+        );
 
         elizaLogger.log("Twitter client started");
 
@@ -61,7 +62,7 @@ export const TwitterClientInterface: Client = {
         await manager.client.init();
 
         // Start the posting loop
-        await manager.post.start();
+        // await manager.post.start();
 
         // Start the search logic if it exists
         if (manager.search) {
