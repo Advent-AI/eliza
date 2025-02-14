@@ -2,6 +2,7 @@ node_modules
 /out
 
 .env
+.env.staging
 .env.production
 .env.local
 .env_main
