@@ -89,11 +89,41 @@ npm install -g pm2
 
 # Setup PM2 startup script
 echo "🚀 Setting up PM2 startup..."
-pm2 startup | tail -n1 | sh
+pm2 startup systemd
+sudo env PATH=$PATH:/usr/local/bin `pm2 startup systemd -u root --hp /root | tail -n1`
 
 # Start application with PM2
 echo "🎯 Starting application with PM2..."
-pm2 start "pnpm start --character=\"characters/yeti.character.json\"" --name "eliza-yeti"
+# Ensure we're in the right directory
+cd /home/alanwu4321/eliza
+
+# Create logs directory
+mkdir -p logs
+
+# Load and export environment variables
+echo "📝 Loading environment variables..."
+
+# Clear existing env vars (except critical ones)
+for var in $(env | grep -v "^HOME=\|^USER=\|^SHELL=\|^PATH=\|^PWD=\|^TERM=\|^SHLVL=" | cut -d= -f1); do
+    unset $var
+done
+
+# Start PM2 with environment variables
+pm2 delete eliza-yeti 2>/dev/null || true
+pm2 start pnpm --name "eliza-yeti" \
+    --cwd "/home/alanwu4321/eliza" \
+    --env production \
+    --time \
+    --output "/home/alanwu4321/eliza/logs/out.log" \
+    --error "/home/alanwu4321/eliza/logs/error.log" \
+    --restart-delay=3000 \
+    --max-restarts=10 \
+    --exp-backoff-restart-delay=100 \
+    -- start --character="characters/yeti.character.json"
+
+# Ensure process is running
+sleep 2
+pm2 list
 pm2 save
 
 # Reload shell environment
