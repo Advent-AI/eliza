@@ -54,17 +54,17 @@ read repo_url
 repo_url=${repo_url:-"git@github.com:Advent-AI/eliza.git"}
 git clone "$repo_url"
 
-# Setup project
-echo "🛠️ Setting up project..."
-cd eliza
-echo "📦 Installing dependencies..."
-pnpm install --no-frozen-lockfile
+# Install pnpm
+echo "📦 Installing pnpm..."
+curl -fsSL https://get.pnpm.io/install.sh | sh -
 
-echo "🔨 Building local libraries..."
-pnpm build
+# Add pnpm to PATH
+export PNPM_HOME="$HOME/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
 
-echo "🔧 Setting up environment variables..."
-cp .env.example .env
 
 # Install Node.js 23 using nvm
 echo "📦 Installing nvm and Node.js..."
@@ -79,9 +79,18 @@ nvm install 23
 nvm use 23
 nvm alias default 23
 
-# Install pnpm
-echo "📦 Installing pnpm..."
-curl -fsSL https://get.pnpm.io/install.sh | sh -
+
+# Setup project
+echo "🛠️ Setting up project..."
+cd eliza
+echo "📦 Installing dependencies..."
+pnpm install --no-frozen-lockfile
+
+echo "🔨 Building local libraries..."
+pnpm build
+
+echo "🔧 Setting up environment variables..."
+cp .env.example .env
 
 # Install and setup PM2
 echo "📦 Installing PM2..."
