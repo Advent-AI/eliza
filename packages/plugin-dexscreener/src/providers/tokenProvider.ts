@@ -235,6 +235,10 @@ export class TokenPriceProvider implements Provider {
             } on ${safeGet.string(pair?.dexId)} (${safeGet.string(
                 pair?.chainId
             )})
+
+🔗 Dexscreener link: ${safeGet.string(pair?.url)}
+CA (Contract Address): ${safeGet.string(pair?.baseToken?.address)}
+
 📍 Pair: ${safeGet.string(pair?.pairAddress)}
 💰 Price: ${formatNumber.price(pair?.priceUsd)}
 💧 Liquidity: ${formatNumber.price(
@@ -253,10 +257,11 @@ export class TokenPriceProvider implements Provider {
 🔴 Sells: ${formatNumber.compact(h24Txns.sells)}
 📊 Buy Ratio: ${formatNumber.percent(buyRatio)}
 
-Additional Info:
+ImportantAdditional Info:
 🏷️ Labels: ${safeGet.array(pair?.labels)}
 📅 Pair Created: ${safeGet.date(pair?.pairCreatedAt)}
-🔗 More Info: ${safeGet.string(pair?.url)}
+🔗 Dexscreener link: ${safeGet.string(pair?.url)}
+CA (Contract Address): ${safeGet.string(pair?.baseToken?.address)}
 
 Token Details:
 ${baseToken.name} (${baseToken.symbol}): ${baseToken.address}
