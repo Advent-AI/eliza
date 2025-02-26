@@ -52,6 +52,7 @@ export class EventHandler {
                 });
                 await this.messageManager.handleMessage(event);
             } catch (error) {
+                console.log("🔔 [MESSAGE] Message handled event", event);
                 elizaLogger.error(
                     "❌ [MESSAGE] Error handling message event:",
                     error

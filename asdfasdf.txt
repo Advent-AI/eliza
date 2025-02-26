@@ -1,0 +1,217 @@
+
+> eliza@ start /Users/alanwu/Desktop/adventai/yeti-agent
+> pnpm --filter "@elizaos/agent" start --isRoot "--character=/Users/alanwu/Desktop/adventai/yeti-agent/characters/yeti/yeti.character.json"
+
+
+> @elizaos/agent@0.25.6-alpha.1 start /Users/alanwu/Desktop/adventai/yeti-agent/agent
+> node --loader ts-node/esm src/index.ts "--isRoot" "--character=/Users/alanwu/Desktop/adventai/yeti-agent/characters/yeti/yeti.character.json"
+
+[2025-02-26 12:10:21] [32mINFO[39m: [36mLoading embedding settings:[39m
+    USE_OPENAI_EMBEDDING: "TRUE"
+    OLLAMA_EMBEDDING_MODEL: "mxbai-embed-large"
+[2025-02-26 12:10:21] [32mINFO[39m: [36mLoading character settings:[39m
+    ARGV: [
+      "/Users/alanwu/.nvm/versions/node/v23.3.0/bin/node",
+      "/Users/alanwu/Desktop/adventai/yeti-agent/agent/src/index.ts",
+      "--isRoot",
+      "--character=/Users/alanwu/Desktop/adventai/yeti-agent/characters/yeti/yeti.character.json"
+    ]
+    CHARACTER_ARG: "--character=/Users/alanwu/Desktop/adventai/yeti-agent/characters/yeti/yeti.character.json"
+    CWD: "/Users/alanwu/Desktop/adventai/yeti-agent/agent"
+[2025-02-26 12:10:21] [37mLOG[39m: [36mLoaded .env file from: /Users/alanwu/Desktop/adventai/yeti-agent/.env[39m
+[2025-02-26 12:10:21] [32mINFO[39m: [36mParsed settings:[39m
+    USE_OPENAI_EMBEDDING: "TRUE"
+    USE_OPENAI_EMBEDDING_TYPE: "string"
+    USE_OLLAMA_EMBEDDING_TYPE: "undefined"
+    OLLAMA_EMBEDDING_MODEL: "mxbai-embed-large"
+[2025-02-26 12:10:23] [37mLOG[39m: [36mDirectClient constructor[39m
+[2025-02-26 12:10:23] [32mINFO[39m: [36mTrying paths:[39m
+    0: {
+      "path": "/Users/alanwu/Desktop/adventai/yeti-agent/characters/yeti/yeti.character.json",
+      "exists": true
+    }
+    1: {
+      "path": "/Users/alanwu/Desktop/adventai/yeti-agent/characters/yeti/yeti.character.json",
+      "exists": true
+    }
+    2: {
+      "path": "/Users/alanwu/Desktop/adventai/yeti-agent/characters/yeti/yeti.character.json",
+      "exists": true
+    }
+    3: {
+      "path": "/Users/alanwu/Desktop/adventai/yeti-agent/characters/yeti/yeti.character.json",
+      "exists": true
+    }
+    4: {
+      "path": "/Users/alanwu/Desktop/adventai/yeti-agent/agent/src/characters/yeti.character.json",
+      "exists": false
+    }
+    5: {
+      "path": "/Users/alanwu/Desktop/adventai/yeti-agent/agent/characters/yeti.character.json",
+      "exists": false
+    }
+    6: {
+      "path": "/Users/alanwu/Desktop/adventai/yeti-agent/characters/yeti.character.json",
+      "exists": false
+    }
+[2025-02-26 12:10:23] [32mINFO[39m: [36mSuccessfully loaded character from: /Users/alanwu/Desktop/adventai/yeti-agent/characters/yeti/yeti.character.json[39m
+[2025-02-26 12:10:23] [32mINFO[39m: [36mInitializing SQLite database at /Users/alanwu/Desktop/adventai/yeti-agent/agent/data/db.sqlite...[39m
+[2025-02-26 12:10:23] [37mLOG[39m: [36msqlite-vec extensions loaded successfully.[39m
+[2025-02-26 12:10:23] [37mSUCCESS[39m: [36mSuccessfully connected to SQLite database[39m
+[2025-02-26 12:10:23] [32mINFO[39m: [36mUsing Database Cache...[39m
+[2025-02-26 12:10:23] [37mLOG[39m: [36mCreating runtime for character Yeti[39m
+[2025-02-26 12:10:23] [32mINFO[39m: [36mYeti(5772bea4-63e8-0443-a27f-3e10533fb293) - Initializing AgentRuntime with options:[39m
+    character: "Yeti"
+    modelProvider: "openai"
+    characterModelProvider: "openai"
+[2025-02-26 12:10:23] [34mDEBUG[39m: [36m[AgentRuntime] Process working directory: /Users/alanwu/Desktop/adventai/yeti-agent/agent[39m
+[2025-02-26 12:10:23] [34mDEBUG[39m: [36m[AgentRuntime] Process knowledgeRoot: /Users/alanwu/Desktop/adventai/yeti-agent/characters/knowledge[39m
+[2025-02-26 12:10:23] [37mSUCCESS[39m: [36mAgent ID: 5772bea4-63e8-0443-a27f-3e10533fb293[39m
+[2025-02-26 12:10:23] [32mINFO[39m: [36mYeti(5772bea4-63e8-0443-a27f-3e10533fb293) - Setting Model Provider:[39m
+    characterModelProvider: "openai"
+    optsModelProvider: "openai"
+    finalSelection: "openai"
+[2025-02-26 12:10:23] [32mINFO[39m: [36mYeti(5772bea4-63e8-0443-a27f-3e10533fb293) - Selected model provider: openai[39m
+[2025-02-26 12:10:23] [32mINFO[39m: [36mYeti(5772bea4-63e8-0443-a27f-3e10533fb293) - Selected image model provider: openai[39m
+[2025-02-26 12:10:23] [32mINFO[39m: [36mYeti(5772bea4-63e8-0443-a27f-3e10533fb293) - Selected image vision model provider: openai[39m
+[2025-02-26 12:10:23] [37mSUCCESS[39m: [36mYeti(5772bea4-63e8-0443-a27f-3e10533fb293) - Registering action: GET_TOKEN_DEX_INFO[39m
+[2025-02-26 12:10:23] [37mSUCCESS[39m: [36mYeti(5772bea4-63e8-0443-a27f-3e10533fb293) - Registering action: GET_LATEST_TOKENS[39m
+[2025-02-26 12:10:23] [37mSUCCESS[39m: [36mYeti(5772bea4-63e8-0443-a27f-3e10533fb293) - Registering action: GET_LATEST_BOOSTED_TOKENS[39m
+[2025-02-26 12:10:23] [37mSUCCESS[39m: [36mYeti(5772bea4-63e8-0443-a27f-3e10533fb293) - Registering action: GET_TOP_BOOSTED_TOKENS[39m
+[2025-02-26 12:10:23] [32mINFO[39m: [36m[RAG Check] RAG Knowledge enabled: true[39m
+[2025-02-26 12:10:23] [32mINFO[39m: [36m[RAG Check] Knowledge items:[39m
+    0: "Scans on-chain metrics (market cap, liquidity, volume, holder growth) and off-chain sentiment (X chatter, TG & Discord discussions, market momentum)."
+    1: "Understands risk-reward setups, tracks capital rotation, and spots potential opportunities before they're obvious."
+    2: "Adapts through reinforcement learning, improving signal detection based on community interaction and real market outcomes."
+    3: "Specializes in detecting scams, manipulated pumps, and exit liquidity traps before they claim retail victims."
+    4: {
+      "directory": "yeti",
+      "shared": true
+    }
+[2025-02-26 12:10:23] [34mDEBUG[39m: [36m[RAG Filter] Found string item: Scans on-chain metrics (market cap, liquidity, volume, holder growth) and off-chain sentiment (X cha...[39m
+[2025-02-26 12:10:23] [34mDEBUG[39m: [36m[RAG Filter] Found string item: Understands risk-reward setups, tracks capital rotation, and spots potential opportunities before th...[39m
+[2025-02-26 12:10:23] [34mDEBUG[39m: [36m[RAG Filter] Found string item: Adapts through reinforcement learning, improving signal detection based on community interaction and...[39m
+[2025-02-26 12:10:23] [34mDEBUG[39m: [36m[RAG Filter] Found string item: Specializes in detecting scams, manipulated pumps, and exit liquidity traps before they claim retail...[39m
+[2025-02-26 12:10:23] [34mDEBUG[39m: [36m[RAG Filter] Found directory item: {"directory":"yeti","shared":true}[39m
+[2025-02-26 12:10:23] [32mINFO[39m: [36m[RAG Summary] Found 1 directories, 0 paths, and 4 strings[39m
+[2025-02-26 12:10:23] [32mINFO[39m: [36m[RAG Process] Processing directory knowledge sources:[39m
+[2025-02-26 12:10:23] [32mINFO[39m: [36m  - Directory: yeti (shared: true)[39m
+[2025-02-26 12:10:23] [34mDEBUG[39m: [36m[RAG Directory] sanitizedDir yeti[39m
+[2025-02-26 12:10:23] [34mDEBUG[39m: [36m[RAG Directory] dirPath /Users/alanwu/Desktop/adventai/yeti-agent/characters/knowledge/yeti[39m
+[2025-02-26 12:10:23] [34mDEBUG[39m: [36m[RAG Directory] Searching in: /Users/alanwu/Desktop/adventai/yeti-agent/characters/knowledge/yeti[39m
+[2025-02-26 12:10:23] [32mINFO[39m: [36m[RAG Directory] Found 1 files in yeti[39m
+[2025-02-26 12:10:23] [34mDEBUG[39m: [36m[RAG Directory] Processing file 1/1:[39m
+    file: "background.md"
+    relativePath: "yeti/background.md"
+    shared: true
+[2025-02-26 12:10:23] [34mDEBUG[39m: [36m[RAG Query][39m
+    knowledgeId: "4128dacb-8a8e-062e-8ce1-3fd4b064941f"
+    agentId: "5772bea4-63e8-0443-a27f-3e10533fb293"
+    relativePath: "yeti/background.md"
+    fullPath: "/Users/alanwu/Desktop/adventai/yeti-agent/characters/knowledge/yeti/background.md"
+    isShared: true
+    knowledgeRoot: "/Users/alanwu/Desktop/adventai/yeti-agent/characters/knowledge"
+[2025-02-26 12:10:23] [34mDEBUG[39m: [36m[RAG Query Result][39m
+    relativePath: "yeti/background.md"
+    fullPath: "/Users/alanwu/Desktop/adventai/yeti-agent/characters/knowledge/yeti/background.md"
+    knowledgeId: "4128dacb-8a8e-062e-8ce1-3fd4b064941f"
+    isShared: true
+    exists: true
+    knowledgeCount: 1
+    firstResult: {
+      "id": "4128dacb-8a8e-062e-8ce1-3fd4b064941f",
+      "agentId": null,
+      "contentLength": 6250
+    }
+    results: [
+      {
+        "id": "4128dacb-8a8e-062e-8ce1-3fd4b064941f",
+        "agentId": null,
+        "isBaseKnowledge": true
+      }
+    ]
+[2025-02-26 12:10:23] [34mDEBUG[39m: [36m[RAG Compare][39m
+    path: "yeti/background.md"
+    knowledgeId: "4128dacb-8a8e-062e-8ce1-3fd4b064941f"
+    isShared: true
+    existingContentLength: 6250
+    newContentLength: 6250
+    contentSample: "# Yeti Knowledge File\n\n## Chunk 1: What is Yeti?\n\n**Content**  \nYeti is the first community-trained "
+    existingContentSample: "# Yeti Knowledge File\n\n## Chunk 1: What is Yeti?\n\n**Content**  \nYeti is the first community-trained "
+    matches: true
+[2025-02-26 12:10:23] [32mINFO[39m: [36mShared knowledge yeti/background.md unchanged, skipping[39m
+[2025-02-26 12:10:23] [34mDEBUG[39m: [36m[RAG Directory] Completed batch 1/1 files[39m
+[2025-02-26 12:10:23] [37mSUCCESS[39m: [36m[RAG Directory] Successfully processed directory: yeti[39m
+[2025-02-26 12:10:23] [32mINFO[39m: [36m[RAG Process] Processing direct string knowledge[39m
+[2025-02-26 12:10:23] [32mINFO[39m: [36m[RAG Cleanup] Starting cleanup of deleted knowledge files[39m
+[2025-02-26 12:10:23] [34mDEBUG[39m: [36m[Cleanup] Starting knowledge cleanup process, agent:  5772bea4-63e8-0443-a27f-3e10533fb293[39m
+[2025-02-26 12:10:23] [34mDEBUG[39m: [36m[Cleanup] Knowledge root path: /Users/alanwu/Desktop/adventai/yeti-agent/characters/knowledge[39m
+[2025-02-26 12:10:23] [34mDEBUG[39m: [36m[Knowledge List] Fetching all entries for agent: 5772bea4-63e8-0443-a27f-3e10533fb293[39m
+[2025-02-26 12:10:23] [34mDEBUG[39m: [36m[Knowledge List] Found 14 entries[39m
+[2025-02-26 12:10:23] [34mDEBUG[39m: [36m[Cleanup] Found 1 parent documents to check[39m
+[2025-02-26 12:10:23] [34mDEBUG[39m: [36m[Cleanup] Checking joined file path: /Users/alanwu/Desktop/adventai/yeti-agent/characters/knowledge/yeti/background.md[39m
+[2025-02-26 12:10:23] [34mDEBUG[39m: [36m[Cleanup] Finished knowledge cleanup process[39m
+[2025-02-26 12:10:23] [32mINFO[39m: [36m[RAG Cleanup] Cleanup complete[39m
+[2025-02-26 12:10:23] [37mLOG[39m: [36minitializeClients for Yeti[39m
+    0: "twitter"
+    1: "telegram"
+    2: "direct"
+[2025-02-26 12:10:23] [37mLOG[39m: [36m📱 Constructing new TelegramClient...[39m
+[2025-02-26 12:10:23] [37mLOG[39m: [36m✅ TelegramClient constructor completed[39m
+[2025-02-26 12:10:23] [37mLOG[39m: [36m🚀 Starting Telegram bot...[39m
+[2025-02-26 12:10:23] [37mLOG[39m: [36m✨ Telegram bot successfully launched and is running![39m
+[2025-02-26 12:10:24] [37mSUCCESS[39m: [36mBot username: @TrueNorthLocalBot[39m
+[2025-02-26 12:10:24] [37mLOG[39m: [36mSetting up message handler...[39m
+[2025-02-26 12:10:24] [37mSUCCESS[39m: [36m✅ Telegram client successfully started for character Yeti[39m
+[2025-02-26 12:10:24] [37mLOG[39m: [36mTwitter client started[39m
+[2025-02-26 12:10:24] [37mLOG[39m: [36mTwitter Client Configuration:[39m
+[2025-02-26 12:10:24] [37mLOG[39m: [36m- Username: yeti_intern[39m
+[2025-02-26 12:10:24] [37mLOG[39m: [36m- Dry Run Mode: disabled[39m
+[2025-02-26 12:10:24] [37mLOG[39m: [36m- Enable Post: enabled[39m
+[2025-02-26 12:10:24] [37mLOG[39m: [36m- Post Interval: 1-1 minutes[39m
+[2025-02-26 12:10:24] [37mLOG[39m: [36m- Action Processing: disabled[39m
+[2025-02-26 12:10:24] [37mLOG[39m: [36m- Action Interval: 1 minutes[39m
+[2025-02-26 12:10:24] [37mLOG[39m: [36m- Post Immediately: enabled[39m
+[2025-02-26 12:10:24] [37mLOG[39m: [36m- Search Enabled: disabled[39m
+[2025-02-26 12:10:24] [37mLOG[39m: [36m- Target Users: [39m
+[2025-02-26 12:10:24] [32mINFO[39m: [36mUsing cached cookies[39m
+[2025-02-26 12:10:24] [37mLOG[39m: [36mWaiting for Twitter login[39m
+[2025-02-26 12:10:27] [31mERROR[39m: [36mLogin attempt failed: Unknown subtask ArkoseLogin[39m
+[2025-02-26 12:10:27] [31mERROR[39m: [36mFailed to login to Twitter. Retrying... (4 attempts left)[39m
+[2025-02-26 12:10:31] [31mERROR[39m: [36mLogin attempt failed: Unknown subtask ArkoseLogin[39m
+[2025-02-26 12:10:31] [31mERROR[39m: [36mFailed to login to Twitter. Retrying... (3 attempts left)[39m
+[2025-02-26 12:10:35] [31mERROR[39m: [36mLogin attempt failed: Unknown subtask ArkoseLogin[39m
+[2025-02-26 12:10:35] [31mERROR[39m: [36mFailed to login to Twitter. Retrying... (2 attempts left)[39m
+[2025-02-26 12:10:37] [32mINFO[39m: [36mTelegram Message: [object Object][39m
+[2025-02-26 12:10:37] [37mLOG[39m: [36mCreating Memory 215c03ff-1855-0799-8cf4-94a837ae2218 asdfeasdf[39m
+[2025-02-26 12:10:37] [31mERROR[39m: [36m❌ Error handling message:[39m
+    code: "SQLITE_ERROR"
+[2025-02-26 12:10:37] [31mERROR[39m: [36mError sending message:[39m
+    code: "SQLITE_ERROR"
+[2025-02-26 12:10:38] [31mERROR[39m: [36mLogin attempt failed: Unknown subtask ArkoseLogin[39m
+[2025-02-26 12:10:38] [31mERROR[39m: [36mFailed to login to Twitter. Retrying... (1 attempts left)[39m
+[2025-02-26 12:10:42] [31mERROR[39m: [36mLogin attempt failed: Unknown subtask ArkoseLogin[39m
+[2025-02-26 12:10:42] [31mERROR[39m: [36mFailed to login to Twitter. Retrying... (0 attempts left)[39m
+[2025-02-26 12:10:42] [31mERROR[39m: [36mMax retries reached. Exiting login process.[39m
+[2025-02-26 12:10:42] [31mERROR[39m: [36mError starting agent for character Yeti:[39m
+[2025-02-26 12:10:42] [31mERROR[39m: 
+    err: {
+      "type": "Error",
+      "message": "Twitter login failed after maximum retries.",
+      "stack":
+          Error: Twitter login failed after maximum retries.
+              at _ClientBase.init (file:///Users/alanwu/Desktop/adventai/yeti-agent/packages/client-twitter/dist/index.js:199:23)
+              at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+              at async Object.start (file:///Users/alanwu/Desktop/adventai/yeti-agent/packages/client-twitter/dist/index.js:7485:9)
+              at async initializeClients (file:///Users/alanwu/Desktop/adventai/yeti-agent/agent/src/index.ts:519:31)
+              at async startAgent (file:///Users/alanwu/Desktop/adventai/yeti-agent/agent/src/index.ts:705:27)
+              at async startAgents (file:///Users/alanwu/Desktop/adventai/yeti-agent/agent/src/index.ts:756:13)
+    }
+[2025-02-26 12:10:42] [31mERROR[39m: [36mError starting agents:[39m
+[2025-02-26 12:10:42] [32mINFO[39m: [36mRun `pnpm start:client` to start the client and visit the outputted URL (http://localhost:5173) to chat with your agents. When running multiple agents, use client with different port `SERVER_PORT=3001 pnpm start:client`[39m
+[2025-02-26 12:10:42] [37mSUCCESS[39m: [36mREST API bound to 0.0.0.0:4000. If running locally, access it at http://localhost:4000.[39m
+[2025-02-26 12:11:48] [37mLOG[39m: [36m⚠️ Received SIGINT. Shutting down Telegram bot gracefully...[39m
+[2025-02-26 12:11:48] [37mLOG[39m: [36mStopping Telegram bot...[39m
+[2025-02-26 12:11:48] [37mLOG[39m: [36mTelegram bot stopped[39m
+[2025-02-26 12:11:48] [37mLOG[39m: [36mReceived shutdown signal, closing server...[39m
+[2025-02-26 12:11:48] [37mSUCCESS[39m: [36mServer closed successfully[39m

@@ -538,6 +538,7 @@ export async function generateText({
                 elizaLogger.debug(
                     "Initializing OpenAI model with Cloudflare check"
                 );
+
                 const baseURL =
                     getCloudflareGatewayBaseURL(runtime, "openai") || endpoint;
 
@@ -546,6 +547,22 @@ export async function generateText({
                     apiKey,
                     baseURL,
                     fetch: runtime.fetch,
+                });
+                elizaLogger.debug("[generation] OpenAI model initialized");
+                elizaLogger.debug("[generation] OpenAI system prompt:", {
+                    prompt: context,
+                    system:
+                        runtime.character.system ??
+                        settings.SYSTEM_PROMPT ??
+                        undefined,
+                    tools: tools,
+                    onStepFinish: onStepFinish,
+                    maxSteps: maxSteps,
+                    temperature: temperature,
+                    maxTokens: max_response_length,
+                    frequencyPenalty: frequency_penalty,
+                    presencePenalty: presence_penalty,
+                    experimental_telemetry: experimental_telemetry,
                 });
 
                 const { text: openaiResponse } = await aiGenerateText({

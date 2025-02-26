@@ -128,7 +128,7 @@ pm2 start pnpm --name "eliza-yeti" \
     --restart-delay=3000 \
     --max-restarts=10 \
     --exp-backoff-restart-delay=100 \
-    -- start --character="characters/yeti.character.json"
+    -- start --character="/home/alanwu4321/eliza/characters/yeti/yeti.character.json"
 
 # Ensure process is running
 sleep 2

@@ -236,6 +236,8 @@ export class SqliteDatabaseAdapter
         // Delete any existing memory with the same ID first
         // const deleteSql = `DELETE FROM memories WHERE id = ? AND type = ?`;
         // this.db.prepare(deleteSql).run(memory.id, tableName);
+        console.log("[Sqlite] Creating memory", memory);
+        console.log("[Sqlite] Creating memory", tableName);
 
         let isUnique = true;
 
