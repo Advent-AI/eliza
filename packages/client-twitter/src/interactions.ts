@@ -483,6 +483,8 @@ export class TwitterInteractionClient {
                 twitterMessageHandlerTemplate,
         });
 
+        elizaLogger.info("[Twitter] Context", context);
+
         const response = await generateMessageResponse({
             runtime: this.runtime,
             context,

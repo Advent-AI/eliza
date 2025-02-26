@@ -502,8 +502,7 @@ export async function generateText({
     const max_context_length =
         modelConfiguration?.maxInputTokens || modelSettings.maxInputTokens;
     const max_response_length =
-        modelConfiguration?.maxOutputTokens ||
-        modelSettings.maxOutputTokens;
+        modelConfiguration?.maxOutputTokens || modelSettings.maxOutputTokens;
     const experimental_telemetry =
         modelConfiguration?.experimental_telemetry ||
         modelSettings.experimental_telemetry;
@@ -567,7 +566,10 @@ export async function generateText({
                 });
 
                 response = openaiResponse;
-                console.log("Received response from OpenAI model.");
+                console.log(
+                    "[generateText] Received response from OpenAI model."
+                );
+                console.log("[generateText] Response:", response);
                 break;
             }
 
@@ -1165,8 +1167,10 @@ export async function generateText({
                 // console.warn("veniceResponse:")
                 // console.warn(veniceResponse)
                 //rferrari: remove all text from <think> to </think>\n\n
-                response = veniceResponse
-                    .replace(/<think>[\s\S]*?<\/think>\s*\n*/g, '');
+                response = veniceResponse.replace(
+                    /<think>[\s\S]*?<\/think>\s*\n*/g,
+                    ""
+                );
                 // console.warn(response)
 
                 // response = veniceResponse;
@@ -1650,7 +1654,9 @@ export const generateImage = async (
 }> => {
     const modelSettings = getImageModelSettings(runtime.imageModelProvider);
     if (!modelSettings) {
-        elizaLogger.warn("No model settings found for the image model provider.");
+        elizaLogger.warn(
+            "No model settings found for the image model provider."
+        );
         return { success: false, error: "No model settings available" };
     }
     const model = modelSettings.name;
@@ -2245,8 +2251,7 @@ async function handleOpenAI({
 }: ProviderOptions): Promise<GenerateObjectResult<unknown>> {
     const endpoint =
         runtime.character.modelEndpointOverride || getEndpoint(provider);
-    const baseURL =
-        getCloudflareGatewayBaseURL(runtime, "openai") || endpoint;
+    const baseURL = getCloudflareGatewayBaseURL(runtime, "openai") || endpoint;
     const openai = createOpenAI({ apiKey, baseURL });
     return await aiGenerateObject({
         model: openai.languageModel(model),
@@ -2365,7 +2370,7 @@ async function handleGoogle({
     mode = "json",
     modelOptions,
 }: ProviderOptions): Promise<GenerateObjectResult<unknown>> {
-    const google = createGoogleGenerativeAI({apiKey});
+    const google = createGoogleGenerativeAI({ apiKey });
     return await aiGenerateObject({
         model: google(model),
         schema,
