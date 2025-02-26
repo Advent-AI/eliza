@@ -30,7 +30,7 @@ export class TokenPriceAction implements Action {
         "PRICE_AND_LIQUIDITY",
     ];
     description =
-        "Fetches comprehensive DEX data including price, liquidity, volume, market cap, transaction stats, and pair details";
+        "Fetches comprehensive DEX data including price, dexscreener link, contract address (ca), liquidity, volume, market cap, transaction stats, and pair details";
     suppressInitialMessage = true;
     template = priceTemplate;
 
