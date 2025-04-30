@@ -236,9 +236,6 @@ export class TokenPriceProvider implements Provider {
                 pair?.chainId
             )})
 
-🔗 Dexscreener link: ${safeGet.string(pair?.url)}
-CA (Contract Address): ${safeGet.string(pair?.baseToken?.address)}
-
 📍 Pair: ${safeGet.string(pair?.pairAddress)}
 💰 Price: ${formatNumber.price(pair?.priceUsd)}
 💧 Liquidity: ${formatNumber.price(
@@ -257,15 +254,15 @@ CA (Contract Address): ${safeGet.string(pair?.baseToken?.address)}
 🔴 Sells: ${formatNumber.compact(h24Txns.sells)}
 📊 Buy Ratio: ${formatNumber.percent(buyRatio)}
 
-ImportantAdditional Info:
+Important Additional Info:
 🏷️ Labels: ${safeGet.array(pair?.labels)}
 📅 Pair Created: ${safeGet.date(pair?.pairCreatedAt)}
 🔗 Dexscreener link: ${safeGet.string(pair?.url)}
 CA (Contract Address): ${safeGet.string(pair?.baseToken?.address)}
 
 Token Details:
-${baseToken.name} (${baseToken.symbol}): ${baseToken.address}
-${quoteToken.name} (${quoteToken.symbol}): ${quoteToken.address}`;
+Base: ${baseToken.name} (${baseToken.symbol}) @ ${baseToken.address}
+Quote: ${quoteToken.name} (${quoteToken.symbol}) @ ${quoteToken.address}`;
         } catch (error) {
             console.error("Error formatting price data:", error);
             return "Error: Unable to format price data. Please try again later.";

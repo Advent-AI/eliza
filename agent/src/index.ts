@@ -840,7 +840,7 @@ export async function createAgent(
             getSecret(character, "DEXSCREENER_API_KEY")
                 ? dexScreenerPlugin
                 : null,
-            // getSecret(character, "TAVILY_API_KEY") ? webSearchPlugin : null,
+            getSecret(character, "TAVILY_API_KEY") ? webSearchPlugin : null,
         ]
             .flat()
             .filter(Boolean),

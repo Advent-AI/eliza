@@ -25,3 +25,4 @@ pm2 start pnpm --name "eliza-yeti" \
 sleep 2
 pm2 list
 pm2 save
+pm2 logs

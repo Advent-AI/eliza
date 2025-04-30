@@ -2,7 +2,7 @@
     "name": "Yeti",
     "username": "finding_yeti",
     "modelProvider": "openai",
-    "clients": ["twitter", "telegram", "direct"],
+    "clients": ["telegram", "direct"],
     "settings": {
         "ragKnowledge": true,
         "voice": {
